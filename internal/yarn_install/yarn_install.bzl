@@ -63,7 +63,8 @@ filegroup(
     "--cache-folder",
     repository_ctx.path("_yarn_cache"),
     "--cwd",
-    repository_ctx.path("")])
+    repository_ctx.path(""),
+    "--scripts-prepend-node-path=true"])
 
   if result.return_code:
     fail("yarn_install failed: %s (%s)" % (result.stdout, result.stderr))
